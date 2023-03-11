@@ -1,0 +1,2 @@
+﻿61911
+/Users/crestlac/Desktop/Godot_mono.app/Contents/MacOS/Godot
