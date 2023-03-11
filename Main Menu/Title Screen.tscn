@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main Menu/Title Screen.gd" type="Script" id=1]
+[ext_resource path="res://Music/Mels_video_game_song.wav" type="AudioStream" id=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/joystix/joystix monospace.otf"
@@ -56,4 +57,8 @@ Press Start to Play!"
 align = 1
 valign = 1
 
+[node name="IntroGameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
 [connection signal="button_up" from="StartButton" to="." method="_on_StartButton_button_up"]
+[connection signal="finished" from="IntroGameMusic" to="." method="_on_IntroGameMusic_finished"]
