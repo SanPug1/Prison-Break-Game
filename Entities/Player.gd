@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+ 
 export(float) var player_speed = 15
 export(float,0,1) var horizontal_drag=0.93
 
