@@ -13,7 +13,10 @@
 
 [node name="Levels" type="Node"]
 
+[node name="Puzzle 10" parent="." instance=ExtResource( 4 )]
+
 [node name="Puzzle 1" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="Puzzle 2" parent="." instance=ExtResource( 9 )]
 
@@ -30,5 +33,3 @@
 [node name="Puzzle 8" parent="." instance=ExtResource( 2 )]
 
 [node name="Puzzle 9" parent="." instance=ExtResource( 3 )]
-
-[node name="Puzzle 10" parent="." instance=ExtResource( 4 )]
