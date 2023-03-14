@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main Menu/Title Screen.gd" type="Script" id=1]
 [ext_resource path="res://Music/Mels_video_game_song.wav" type="AudioStream" id=2]
-[ext_resource path="res://Art/mainmenu.png" type="Texture" id=3]
+[ext_resource path="res://Art/mainmenu2redone.png" type="Texture" id=3]
+[ext_resource path="res://Art/mainmenu1redone.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Fonts/joystix/joystix monospace.otf"
@@ -21,11 +22,16 @@ font_data = SubResource( 3 )
 [node name="Title Screen" type="Node"]
 script = ExtResource( 1 )
 
-[node name="MainMenuBackground" type="TextureRect" parent="."]
+[node name="MainMenuBackground2" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
+
+[node name="MainMenuBackground" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 4 )
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.5
