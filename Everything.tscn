@@ -17,3 +17,4 @@ script = ExtResource( 3 )
 visible = false
 
 [node name="Player_Mel_Version" parent="." instance=ExtResource( 5 )]
+position = Vector2( 105, 411 )
