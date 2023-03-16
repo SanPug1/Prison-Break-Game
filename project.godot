@@ -14,6 +14,10 @@ config/name="Final Project"
 run/main_scene="res://Everything.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1050
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

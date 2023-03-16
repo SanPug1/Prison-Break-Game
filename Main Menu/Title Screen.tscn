@@ -23,15 +23,16 @@ font_data = SubResource( 3 )
 script = ExtResource( 1 )
 
 [node name="MainMenuBackground2" type="TextureRect" parent="."]
-margin_right = 1024.0
+margin_right = 1048.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 expand = true
 
 [node name="MainMenuBackground" type="TextureRect" parent="."]
-margin_right = 1024.0
+margin_right = 1048.0
 margin_bottom = 600.0
 texture = ExtResource( 4 )
+expand = true
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.5

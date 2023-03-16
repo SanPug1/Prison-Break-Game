@@ -20,7 +20,7 @@ func _physics_process(delta):
 		set_linear_velocity(Vector2())
 	
 	if Input.is_action_just_pressed("ui_space"):
-		apply_impulse(Vector2(),Vector2(0,-150))
+		apply_impulse(Vector2(),Vector2(0,-300))
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized()
@@ -29,7 +29,7 @@ func _physics_process(delta):
 		$AnimatedSprite.stop()
 
 	position.x = clamp(position.x,15,screen_size.x-15)
-	position.y = clamp(position.y,0,screen_size.y-55)
+	position.y = clamp(position.y,50,screen_size.y-50)
 
 	if velocity.x != 0:
 		$AnimatedSprite.animation = "walking"
