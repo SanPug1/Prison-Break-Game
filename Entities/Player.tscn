@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Player.gd" type="Script" id=1]
 
@@ -6,20 +6,14 @@
 extents = Vector2( 24, 40 )
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -23, 0 )
-b = Vector2( 23, 0 )
+custom_solver_bias = 0.5
+a = Vector2( -22, 0 )
+b = Vector2( 22, 0 )
 
 [sub_resource type="SegmentShape2D" id=3]
-a = Vector2( -39, 0 )
-b = Vector2( 39, 0 )
-
-[sub_resource type="SegmentShape2D" id=4]
-a = Vector2( -39, 0 )
-b = Vector2( 39, 0 )
-
-[sub_resource type="SegmentShape2D" id=5]
-a = Vector2( -23, 0 )
-b = Vector2( 23, 0 )
+custom_solver_bias = 0.5
+a = Vector2( -38, 0 )
+b = Vector2( 38, 0 )
 
 [node name="Player" type="RigidBody2D"]
 mode = 2
@@ -41,23 +35,27 @@ position = Vector2( 0, 40 )
 rotation = -3.14159
 shape = SubResource( 2 )
 one_way_collision = true
+one_way_collision_margin = 8.0
 
 [node name="Detect_Right" type="CollisionShape2D" parent="."]
 position = Vector2( 24, 0 )
 rotation = 1.5708
 shape = SubResource( 3 )
 one_way_collision = true
+one_way_collision_margin = 8.0
+
+[node name="Detect_Top" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -40 )
+shape = SubResource( 2 )
+one_way_collision = true
+one_way_collision_margin = 8.0
 
 [node name="Detect_Left" type="CollisionShape2D" parent="."]
 position = Vector2( -24, 0 )
 rotation = 4.71239
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 one_way_collision = true
-
-[node name="Detect_Top" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -40 )
-shape = SubResource( 5 )
-one_way_collision = true
+one_way_collision_margin = 8.0
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Collision_Detected"]
 [connection signal="body_shape_exited" from="." to="." method="_on_Collision_Ended"]
