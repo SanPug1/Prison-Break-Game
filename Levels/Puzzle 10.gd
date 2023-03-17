@@ -8,9 +8,24 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$TileMap3.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+#	if $UnpressedButtonTile.collided() == true:
+#		$UnpressedButtonTile.hide()
+#		$PressedButtonTile.show()
+#		$ButtonTimer.start()
+#		$TileMap.hide()
+#		$TileMap3.show()
+	pass
+
+
+func _on_ButtonTimer_timeout() -> void:
+	$TileMap3.hide()
+	$TileMap.show()
+	$PressedButtonTile.hide()
+	$UnpressedButtonTile.show()
+
+

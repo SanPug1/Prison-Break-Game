@@ -73,14 +73,14 @@ func _process(_delta):
 		queue_for_zero(Directions.DOWN, zeroBeforeAccel)
 		jumping = true
 	if (queuedAccel.x != 0):
-		$Anims.animation = "Walking"
+		$Anims.animation = "walking"
 		$Anims.playing = true
 	if (queuedAccel.x < 0):
 		$Anims.flip_h = false
 	elif (queuedAccel.x > 0):
 		$Anims.flip_h = true
 	else:
-		$Anims.animation = "Idle"
+		$Anims.animation = "default"
 		$Anims.playing = false
 
 func _physics_process(delta):
