@@ -14,3 +14,5 @@ script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 866, 258 )
+
+[connection signal="game_start" from="Title_Screen" to="." method="_on_Game_Start"]

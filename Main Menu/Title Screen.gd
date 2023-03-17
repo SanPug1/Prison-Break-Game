@@ -1,5 +1,7 @@
 extends Node
 
+signal game_start
+
 var pressedbutton = false
 var visiblebutton = true
 
@@ -19,8 +21,7 @@ func _on_StartButton_button_up():
 	$IntroGameMusic.stop()
 	$TextTimer.stop()
 	pressedbutton = true
-
-
+	emit_signal("game_start")
 
 func _on_TextTimer_timeout():
 	if visiblebutton == false and pressedbutton == false:

@@ -10,17 +10,17 @@
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "walking",
+"name": "Walking",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 14.5, 46 )
+extents = Vector2( 13.5, 45.5 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -29,7 +29,8 @@ script = ExtResource( 1 )
 position = Vector2( -1.49012e-07, 1.99999 )
 scale = Vector2( 0.92, 0.92 )
 frames = SubResource( 7 )
+animation = "Idle"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0.5 )
+position = Vector2( -1.5, 2.5 )
 shape = SubResource( 6 )

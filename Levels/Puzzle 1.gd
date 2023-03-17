@@ -32,7 +32,7 @@ func _process(delta):
 				itemFound += 1
 				p3 = true
 			#_draw($Polygon3.position, 202, 0, 2*PI)
-	print(itemFound)
+	#print(itemFound)
 
 #func _draw(center, radius, angle_from, angle_to):
 #	draw_circle_arc(center, radius, angle_from, angle_to, Color.red)
