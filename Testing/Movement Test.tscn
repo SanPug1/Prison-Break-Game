@@ -23,7 +23,6 @@ script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 300 )
-gravity_scale = 4.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2( 512, 544 )
@@ -59,19 +58,3 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2( 292, 360 )
 shape = SubResource( 5 )
-
-[node name="Info" type="Node2D" parent="."]
-position = Vector2( 512, 64 )
-
-[node name="Label" type="Label" parent="Info"]
-margin_left = -128.0
-margin_top = -48.0
-margin_right = 128.0
-margin_bottom = 80.0
-text = "Multipliers:
-+x:
-+y:
--x:
--y:
-x:
-y:"

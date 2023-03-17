@@ -1,98 +1,162 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 # warning-ignore-all:unused_argument
+# warning-ignore-all:export_hint_type_mistmatch
 
-export(float) var horizontal_speed = 200.0
-export(float) var jump_strength = 350.0
+# Gravity Variables
+export(Vector2) var gravity = Vector2.DOWN
+export(float) var gravityStrength = 15
 
-var can_jump = false
-var prepared_motion_this_frame = Vector2.ZERO
+# Speed Variables
+export(float) var jumpStrengthFactor = 42
+export(float) var horizontalWalkSpeed = 150
 
-var postitive_motion_multiplier = Vector2.ONE
-var negative_motion_multiplier = Vector2.ONE
-var all_motion_multiplier = Vector2.ONE
+# Maximum Speed Variables (-1 is disabled, kept for future-proofing potential movement constraints)
+export(float) var maxVelocityMagnitude = -1
+export(Vector2) var directionalVelocityLimit = Vector2(400, -1)
+
+# Physics stuff...
+var velocity = Vector2.ZERO
+var queuedAccel = Vector2.ZERO
+
+# Velocity Overrides:
+# after accel isn't used *yet*, but I think it's useful to have around just in case
+var zeroBeforeAccel = {
+	"up": false,
+	"down": false,
+	"left": false,
+	"right": false
+}
+var zeroAfterAccel = {
+	"up": false,
+	"down": false,
+	"left": false,
+	"right": false
+}
+
+# Useful attributes
+enum Directions {
+	ALL,
+	VERTICAL,
+	HORIZONTAL,
+	LEFT,
+	RIGHT,
+	UP,
+	DOWN
+}
+
+# Action flags - controls when actions are possible
+var onGround = false
+var jumping = false
+var canJump = false
+var coyote_base_amt = 0.08
+var coyote = 0
 
 func _ready():
 	pass
 
 func _process(_delta):
-	prepared_motion_this_frame = Vector2.ZERO
+	queuedAccel = Vector2.ZERO
+	queue_for_zero(Directions.HORIZONTAL, zeroBeforeAccel)
 	if Input.is_action_pressed("player_left"):
-		prepared_motion_this_frame.x -= horizontal_speed
+		queuedAccel.x -= horizontalWalkSpeed
+		unqueue_for_zero(Directions.HORIZONTAL, zeroBeforeAccel)
 	if Input.is_action_pressed("player_right"):
-		prepared_motion_this_frame.x += horizontal_speed
-	if can_jump and Input.is_action_pressed("player_jump"):
-		prepared_motion_this_frame.y -= jump_strength
-		can_jump = false
-	
-	# Apply Motion Multipliers
-	if (prepared_motion_this_frame.x > 0):
-		prepared_motion_this_frame.x *= postitive_motion_multiplier.x
+		queuedAccel.x += horizontalWalkSpeed
+		unqueue_for_zero(Directions.HORIZONTAL, zeroBeforeAccel)
+	if jumping and !Input.is_action_pressed("player_jump"):
+		queue_for_zero(Directions.UP, zeroAfterAccel)
+	if canJump and Input.is_action_pressed("player_jump"):
+		queuedAccel.y = -jumpStrengthFactor * gravityStrength
+		queue_for_zero(Directions.DOWN, zeroBeforeAccel)
+		jumping = true
+	if (queuedAccel.x != 0):
+		$Anims.animation = "Walking"
+		$Anims.playing = true
+	if (queuedAccel.x < 0):
+		$Anims.flip_h = false
+	elif (queuedAccel.x > 0):
+		$Anims.flip_h = true
 	else:
-		prepared_motion_this_frame.x *= negative_motion_multiplier.x
-	if (prepared_motion_this_frame.y > 0):
-		prepared_motion_this_frame.y *= postitive_motion_multiplier.y
-	else:
-		prepared_motion_this_frame.y *= negative_motion_multiplier.y
-	prepared_motion_this_frame.x *= all_motion_multiplier.x
-	prepared_motion_this_frame.y *= all_motion_multiplier.y
+		$Anims.animation = "Idle"
+		$Anims.playing = false
 
-func _integrate_forces(_state):
-	linear_velocity.x = prepared_motion_this_frame.x
-	linear_velocity.y += prepared_motion_this_frame.y
+func _physics_process(delta):
+	apply_zero_dict(zeroBeforeAccel)
+	velocity += gravity * gravityStrength
+	velocity += queuedAccel
+	apply_zero_dict(zeroAfterAccel)
+	if (directionalVelocityLimit.x > 0):
+		velocity.x = clamp(velocity.x, -directionalVelocityLimit.x, directionalVelocityLimit.x)
+	if (directionalVelocityLimit.y > 0):
+		velocity.y = clamp(velocity.y, -directionalVelocityLimit.y, directionalVelocityLimit.y)
+	if (maxVelocityMagnitude > 0):
+		velocity = velocity.limit_length(maxVelocityMagnitude)
+	var newVel = move_and_slide(velocity, Vector2.UP)
+	# TODO: add a tolerance term to ground detection (if slopes)
+	onGround = (newVel.y < velocity.y)
+	if onGround:
+		jumping = false
+		coyote = coyote_base_amt
+		canJump = true
+	elif canJump:
+		coyote -= delta
+		if coyote < 0:
+			canJump = false
+		elif velocity.y < 0:
+			canJump = false
+	velocity = newVel
+	reset_zero_dict(zeroBeforeAccel)
+	reset_zero_dict(zeroAfterAccel)
+	# probably redundant with the zeroing at the beginning of _process, but don't want to take chances
+	queuedAccel = Vector2.ZERO
 
-func _on_Collision_Detected(body_rid, body, body_shape_index, local_shape_index):
-	var collider = shape_owner_get_owner(local_shape_index)
-	if collider == $Detect_Bottom:
-		_on_Down_Collide(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Top:
-		_on_Up_Collide(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Left:
-		_on_Left_Collide(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Right:
-		_on_Right_Collide(body_rid, body, body_shape_index, local_shape_index)
-	else:
-		_on_General_Collide(body_rid, body, body_shape_index, local_shape_index)
+func unqueue_for_zero(dir, dict):
+	set_dir_flags(dir, dict, false)
 
-func _on_Down_Collide(body_rid, body, body_shape_index, local_shape_index):
-	can_jump = true
+func queue_for_zero(dir, dict):
+	set_dir_flags(dir, dict, true)
 
-func _on_Up_Collide(body_rid, body, body_shape_index, local_shape_index):
-	pass
+func set_dir_flags(dir, dict, value):
+	match(dir):
+		Directions.ALL:
+			dict.left = value
+			dict.right = value
+			dict.up = value
+			dict.down = value
+		Directions.VERTICAL:
+			dict.up = value
+			dict.down = value
+		Directions.HORIZONTAL:
+			dict.right = value
+			dict.left = value
+		Directions.LEFT:
+			dict.left = value
+		Directions.RIGHT:
+			dict.right = value
+		Directions.UP:
+			dict.up = value
+		Directions.DOWN:
+			dict.down = value
+		_:
+			pass # Do nothing on non-valid value
 
-func _on_Left_Collide(body_rid, body, body_shape_index, local_shape_index):
-	negative_motion_multiplier.x = 0
+func reset_zero_dict(dict):
+	dict.left = false
+	dict.right = false
+	dict.up = false
+	dict.down = false
 
-func _on_Right_Collide(body_rid, body, body_shape_index, local_shape_index):
-	postitive_motion_multiplier.x = 0
-
-func _on_General_Collide(body_rid, body, body_shape_index, local_shape_index):
-	pass
-
-func _on_Collision_Ended(body_rid, body, body_shape_index, local_shape_index):
-	var collider = shape_owner_get_owner(local_shape_index)
-	if collider == $Detect_Bottom:
-		_on_Down_Collide_End(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Top:
-		_on_Up_Collide_End(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Left:
-		_on_Left_Collide_End(body_rid, body, body_shape_index, local_shape_index)
-	elif collider == $Detect_Right:
-		_on_Right_Collide_End(body_rid, body, body_shape_index, local_shape_index)
-	else:
-		_on_General_Collide_End(body_rid, body, body_shape_index, local_shape_index)
-
-func _on_Down_Collide_End(body_rid, body, body_shape_index, local_shape_index):
-	can_jump = false
-
-func _on_Up_Collide_End(body_rid, body, body_shape_index, local_shape_index):
-	pass
-
-func _on_Left_Collide_End(body_rid, body, body_shape_index, local_shape_index):
-	negative_motion_multiplier.x = 1
-
-func _on_Right_Collide_End(body_rid, body, body_shape_index, local_shape_index):
-	postitive_motion_multiplier.x = 1
-
-func _on_General_Collide_End(body_rid, body, body_shape_index, local_shape_index):
-	pass
+func apply_zero_dict(dict):
+	var topLeft = -Vector2.INF
+	var bottomRight = Vector2.INF
+	if dict.left:
+		topLeft.x = 0
+	if dict.right:
+		bottomRight.x = 0
+	if dict.up:
+		topLeft.y = 0
+	if dict.down:
+		bottomRight.y = 0
+	velocity.x = clamp(velocity.x, topLeft.x, bottomRight.x)
+	velocity.y = clamp(velocity.y, topLeft.y, bottomRight.y)
