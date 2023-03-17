@@ -85,6 +85,11 @@ ui_space={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="world"
+
 [mono]
 
 project/assembly_name="Final Project"
