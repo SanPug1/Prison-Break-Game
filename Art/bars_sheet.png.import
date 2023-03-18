@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pathmidpiece.png-624f15a227ea0becf4e2aa94e8bf1657.stex"
+path="res://.import/bars_sheet.png-3092ff99a8ec01012854a0b276d7aa07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/pathmidpiece.png"
-dest_files=[ "res://.import/pathmidpiece.png-624f15a227ea0becf4e2aa94e8bf1657.stex" ]
+source_file="res://Art/bars_sheet.png"
+dest_files=[ "res://.import/bars_sheet.png-3092ff99a8ec01012854a0b276d7aa07.stex" ]
 
 [params]
 
@@ -24,7 +24,7 @@ flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

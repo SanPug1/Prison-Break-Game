@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pathmidpiece.png-624f15a227ea0becf4e2aa94e8bf1657.stex"
+path="res://.import/ground_sheet.png-b307f0270f195bd240ace4538239d9f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/pathmidpiece.png"
-dest_files=[ "res://.import/pathmidpiece.png-624f15a227ea0becf4e2aa94e8bf1657.stex" ]
+source_file="res://Art/ground_sheet.png"
+dest_files=[ "res://.import/ground_sheet.png-b307f0270f195bd240ace4538239d9f0.stex" ]
 
 [params]
 
