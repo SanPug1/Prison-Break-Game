@@ -16,8 +16,7 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1050
-window/size/height=624
+window/size/height=640
 
 [gui]
 
