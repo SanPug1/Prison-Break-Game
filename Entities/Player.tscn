@@ -1,34 +1,34 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Player.gd" type="Script" id=1]
-[ext_resource path="res://Art/characterneutral1_pixel.png" type="Texture" id=2]
-[ext_resource path="res://Art/characterwalk1_pixel.png" type="Texture" id=3]
-[ext_resource path="res://Art/characterwalk2_pixel.png" type="Texture" id=4]
+[ext_resource path="res://Art/characterneutral.png" type="Texture" id=2]
+[ext_resource path="res://Art/characterwalk1.png" type="Texture" id=3]
+[ext_resource path="res://Art/characterwalk2.png" type="Texture" id=4]
+[ext_resource path="res://Art/characterneutralbackarm.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Idle",
+"name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "Walking",
-"speed": 5.0
+"name": "walking",
+"speed": 4.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 24, 40 )
+extents = Vector2( 14.5, 46 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="Anims" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.91667, 2.91667 )
 frames = SubResource( 7 )
-animation = "Idle"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0.5 )
+position = Vector2( -1.5, 0 )
 shape = SubResource( 6 )

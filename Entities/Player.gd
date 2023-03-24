@@ -11,7 +11,7 @@ export(float) var gravityStrength = 15
 export(float) var jumpStrengthFactor = 42
 export(float) var horizontalWalkSpeed = 150
 
-# Maximum Speed Variables (-1 is disabled, kept for future-proofing potential movement constraints)
+# Maximum Speed Variables (-1 is disabled, kept for potential future movement constraints)
 export(float) var maxVelocityMagnitude = -1
 export(Vector2) var directionalVelocityLimit = Vector2(400, -1)
 
@@ -20,7 +20,6 @@ var velocity = Vector2.ZERO
 var queuedAccel = Vector2.ZERO
 
 # Velocity Overrides:
-# after accel isn't used *yet*, but I think it's useful to have around just in case
 var zeroBeforeAccel = {
 	"up": false,
 	"down": false,
@@ -51,11 +50,14 @@ var jumping = false
 var canJump = false
 var coyote_base_amt = 0.08
 var coyote = 0
+var lock = false
 
 func _ready():
 	pass
 
 func _process(_delta):
+	if lock:
+		return
 	queuedAccel = Vector2.ZERO
 	queue_for_zero(Directions.HORIZONTAL, zeroBeforeAccel)
 	if Input.is_action_pressed("player_left"):
@@ -71,17 +73,19 @@ func _process(_delta):
 		queue_for_zero(Directions.DOWN, zeroBeforeAccel)
 		jumping = true
 	if (queuedAccel.x != 0):
-		$Anims.animation = "Walking"
+		$Anims.animation = "walking"
 		$Anims.playing = true
 	if (queuedAccel.x < 0):
 		$Anims.flip_h = false
 	elif (queuedAccel.x > 0):
 		$Anims.flip_h = true
 	else:
-		$Anims.animation = "Idle"
+		$Anims.animation = "default"
 		$Anims.playing = false
 
 func _physics_process(delta):
+	if lock:
+		return
 	apply_zero_dict(zeroBeforeAccel)
 	velocity += gravity * gravityStrength
 	velocity += queuedAccel
