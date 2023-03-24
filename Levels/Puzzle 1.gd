@@ -35,9 +35,7 @@ func _process(delta):
 				p3 = true
 				print(itemFound)
 				#_draw($Polygon3.position, 202, 0, 2*PI)
-			#_draw($Polygon3.position, 202, 0, 2*PI)
-	   #print(itemFound)
-
+	
 	
 func draw_circle_arc(center, radius, color):
 	var points = 32
