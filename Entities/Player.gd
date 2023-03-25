@@ -112,6 +112,13 @@ func _physics_process(delta):
 	velocity = newVel
 	reset_zero_dict(zeroBeforeAccel)
 	reset_zero_dict(zeroAfterAccel)
+	
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider is MoveableBox:
+			collision.collider.slide(-collision.normal * (horizontalWalkSpeed/2))
+			
+	
 	# probably redundant with the zeroing at the beginning of _process, but don't want to take chances
 	queuedAccel = Vector2.ZERO
 
