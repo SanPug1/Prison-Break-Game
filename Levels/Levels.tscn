@@ -20,19 +20,19 @@ visible = false
 
 [node name="Puzzle_2" parent="." instance=ExtResource( 9 )]
 
-[node name="Puzzle 3" parent="." instance=ExtResource( 5 )]
+[node name="Puzzle_3" parent="." instance=ExtResource( 5 )]
 
-[node name="Puzzle 4" parent="." instance=ExtResource( 7 )]
+[node name="Puzzle_4" parent="." instance=ExtResource( 7 )]
 
-[node name="Puzzle 5" parent="." instance=ExtResource( 6 )]
+[node name="Puzzle_5" parent="." instance=ExtResource( 6 )]
 
-[node name="Puzzle 6" parent="." instance=ExtResource( 8 )]
+[node name="Puzzle_6" parent="." instance=ExtResource( 8 )]
 
-[node name="Puzzle 7" parent="." instance=ExtResource( 10 )]
+[node name="Puzzle_7" parent="." instance=ExtResource( 10 )]
 
-[node name="Puzzle 8" parent="." instance=ExtResource( 2 )]
+[node name="Puzzle_8" parent="." instance=ExtResource( 2 )]
 
-[node name="Puzzle 9" parent="." instance=ExtResource( 3 )]
+[node name="Puzzle_9" parent="." instance=ExtResource( 3 )]
 
 [node name="Puzzle_10" parent="." instance=ExtResource( 4 )]
 
