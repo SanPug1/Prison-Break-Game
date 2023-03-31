@@ -30,8 +30,8 @@ func _ready() -> void:
 	remove_child($Puzzle_8)
 	Puzzle9 = $Puzzle_9
 	remove_child($Puzzle_9)
-	Puzzle10 = $Puzzle_10
-	remove_child($Puzzle_10)
+#	Puzzle10 = $Puzzle_10
+#	remove_child($Puzzle_10)
 	
 func _on_Puzzle_10_next_puzzle() -> void:
 	add_child(Puzzle2)

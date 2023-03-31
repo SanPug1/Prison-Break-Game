@@ -16,7 +16,6 @@
 script = ExtResource( 11 )
 
 [node name="Puzzle_1" parent="." instance=ExtResource( 1 )]
-visible = false
 
 [node name="Puzzle_2" parent="." instance=ExtResource( 9 )]
 
@@ -32,8 +31,8 @@ visible = false
 
 [node name="Puzzle_8" parent="." instance=ExtResource( 2 )]
 
-[node name="Puzzle_9" parent="." instance=ExtResource( 3 )]
-
 [node name="Puzzle_10" parent="." instance=ExtResource( 4 )]
+
+[node name="Puzzle_9" parent="." instance=ExtResource( 3 )]
 
 [connection signal="next_puzzle" from="Puzzle_10" to="." method="_on_Puzzle_10_next_puzzle"]
