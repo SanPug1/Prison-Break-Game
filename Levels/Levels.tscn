@@ -35,5 +35,3 @@ visible = false
 [node name="Puzzle_9" parent="." instance=ExtResource( 3 )]
 
 [node name="Puzzle_10" parent="." instance=ExtResource( 4 )]
-
-[connection signal="next_puzzle" from="Puzzle_10" to="." method="_on_Puzzle_10_next_puzzle"]

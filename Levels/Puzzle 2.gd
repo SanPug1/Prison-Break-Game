@@ -14,6 +14,12 @@ var gate4Open = false
 func _ready():
 	inQueue.resize(2)
 	inQueue.fill(null)
+	$Gate1.show()
+	$Gate1.set_collision_layer_bit(0, true)
+	$Gate1.set_collision_mask_bit(0, true)
+	$Gate2.show()
+	$Gate2.set_collision_layer_bit(0, true)
+	$Gate2.set_collision_mask_bit(0, true)
 	show()
 	pass # Replace with function body.
 

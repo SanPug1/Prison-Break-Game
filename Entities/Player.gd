@@ -83,6 +83,7 @@ func _process(_delta):
 		$Anims.animation = "default"
 		$Anims.playing = false
 
+
 func _physics_process(delta):
 	if lock:
 		return
@@ -114,6 +115,10 @@ func _physics_process(delta):
 	reset_zero_dict(zeroAfterAccel)
 	# probably redundant with the zeroing at the beginning of _process, but don't want to take chances
 	queuedAccel = Vector2.ZERO
+	for index in get_slide_count():
+		var collision = get_slide_collision(index)
+		if collision.collider is MoveableBox:
+			collision.collider.slide(-collision.normal * (horizontalWalkSpeed/2))
 
 func unqueue_for_zero(dir, dict):
 	set_dir_flags(dir, dict, false)
