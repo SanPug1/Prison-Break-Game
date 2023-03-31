@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Final Project"
 run/main_scene="res://Levels/Puzzle 2.tscn"
+run/main_scene="res://Everything.tscn"
 config/icon="res://icon.png"
 
 [display]

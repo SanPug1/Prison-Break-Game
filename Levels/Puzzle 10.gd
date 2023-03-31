@@ -1,5 +1,7 @@
 extends Node
 
+signal next_puzzle
+
 var firstrun = true
 var playerhaskey = false
 
@@ -21,6 +23,8 @@ func _process(delta):
 		$TileMap3.set_collision_layer_bit(0, false)
 		$TileMap3.set_collision_mask_bit(0, false)
 		$doorArea.hide()
+		$doorArea.set_collision_layer_bit(0, false)
+		$doorArea.set_collision_mask_bit(0, false)
 		firstrun = false
 
 func _on_ButtonTimer_timeout() -> void:
@@ -48,11 +52,12 @@ func _on_Area2D_body_entered(body: Node) -> void:
 func _on_Area2D_body_exited(body: Node) -> void:
 	$ButtonTimer.start()
 
-func _on_keyArea_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_keyArea_body_exited(body: Node) -> void:
 	playerhaskey = true
 	$doorArea.show()
-
+	$doorArea.set_collision_layer_bit(0, true)
+	$doorArea.set_collision_mask_bit(0, true)
 
 func _on_doorArea_body_entered(body: Node) -> void:
-	if playerhaskey == true and Input.is_action_just_released("interact"):
-		get_tree().change_scene("res://Levels/Puzzle 1.tscn")
+	emit_signal("next_puzzle")
+	playerhaskey = false
