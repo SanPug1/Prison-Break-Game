@@ -20,6 +20,12 @@ func _ready():
 	$Gate2.show()
 	$Gate2.set_collision_layer_bit(0, true)
 	$Gate2.set_collision_mask_bit(0, true)
+	$Gate3.show()
+	$Gate3.set_collision_layer_bit(0, true)
+	$Gate3.set_collision_mask_bit(0, true)
+	$Gate4.show()
+	$Gate4.set_collision_layer_bit(0, true)
+	$Gate4.set_collision_mask_bit(0, true)
 	show()
 	pass # Replace with function body.
 
