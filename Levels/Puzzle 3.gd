@@ -29,6 +29,7 @@ func _on_ButtonTimer_timeout() -> void:
 	$Area2D.show()
 	$TileMap.set_collision_layer_bit(0, true)
 	$TileMap.set_collision_mask_bit(0, true)
+	
 
 func _on_Area2D_body_entered(body: Node) -> void:
 	$Area2D.hide()
@@ -39,6 +40,7 @@ func _on_Area2D_body_entered(body: Node) -> void:
 	
 func _on_Area2D_body_exited(body: Node) -> void:
 	$ButtonTimer.start()
+	$doorArea.hide()
 
 
 
