@@ -1,3 +1,95 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=3]
+[ext_resource path="res://box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Puzzle 3.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.25, 48.75 )
 
 [node name="Puzzle_3" type="Node"]
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 10.0
+margin_right = 1048.0
+margin_bottom = 610.0
+color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+margin_left = 1030.0
+margin_top = 420.0
+margin_right = 1128.0
+margin_bottom = 620.0
+color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 262146, -65536, 0, 196609, -65535, 0, 196609, -65534, 0, 196609, -65533, 0, 196609, -65532, 0, 196609, -65531, 0, 196609, -65530, 0, 196609, -65529, 0, 131077, -65528, 0, 196609, -65527, 0, 196609, -65526, 0, 196609, -65525, 0, 196609, -65524, 0, 196609, -65523, 0, 196609, -65522, 0, 196609, -65521, 0, 196609, -65520, 0, 196609, -65519, 0, 196609, -65518, 0, 196609, -65517, 0, 196609, -65516, 0, 196609, -65515, 0, 196609, -65514, 0, 196609, -65513, 0, 196609, -65512, 0, 196609, -65511, 0, 196609, -65510, 0, 196609, -65509, 0, 196609, -65508, 0, 196609, -65507, 0, 196609, -65506, 0, 196609, -65505, 0, 196609, -65504, 0, 262147, 65535, 0, 65539, 7, 0, 65539, 32, 0, 65539, 131071, 0, 65539, 65543, 0, 65539, 65568, 0, 65539, 196607, 0, 65539, 131079, 0, 65539, 131104, 0, 65539, 262143, 0, 65539, 196615, 0, 65539, 196640, 0, 65539, 327679, 0, 65539, 262151, 0, 65539, 262176, 0, 65539, 393215, 0, 65539, 327687, 0, 131075, 327712, 0, 65539, 458751, 0, 196612, 393216, 0, 196609, 393217, 0, 196609, 393218, 0, 196610, 393248, 0, 65539, 524287, 0, 65539, 458784, 0, 65539, 589823, 0, 65539, 524307, 0, 196608, 524308, 0, 196609, 524309, 0, 196609, 524310, 0, 196610, 524320, 0, 65539, 655359, 0, 65539, 589855, 0, 196608, 589856, 0, 196614, 720895, 0, 65539, 655392, 0, 65539, 786431, 0, 65539, 720900, 0, 196608, 720901, 0, 5, 720902, 0, 4, 720903, 0, 196610, 720928, 0, 65539, 851967, 0, 65539, 786437, 0, 131072, 786438, 0, 131074, 786464, 0, 327682, 786465, 0, 196609, 786466, 0, 196609, 786467, 0, 262147, 917503, 0, 65539, 851992, 0, 196608, 851993, 0, 196609, 851994, 0, 196610, 852003, 0, 65539, 983039, 0, 65539, 917539, 0, 65539, 1048575, 0, 196612, 983040, 0, 196610, 983075, 0, 65539, 1114111, 0, 65539, 1048611, 0, 65539, 1179647, 0, 65539, 1114132, 0, 3, 1114147, 0, 65539, 1245183, 0, 65539, 1179667, 0, 0, 1179668, 0, 196615, 1179669, 0, 2, 1179683, 0, 65539, 1310719, 0, 327682, 1245184, 0, 196609, 1245185, 0, 196609, 1245186, 0, 196609, 1245187, 0, 196609, 1245188, 0, 196609, 1245189, 0, 196609, 1245190, 0, 196609, 1245191, 0, 196609, 1245192, 0, 196609, 1245193, 0, 196609, 1245194, 0, 196609, 1245195, 0, 196609, 1245196, 0, 196609, 1245197, 0, 196609, 1245198, 0, 196609, 1245199, 0, 196609, 1245200, 0, 196609, 1245201, 0, 196609, 1245202, 0, 196609, 1245203, 0, 65541, 1245204, 0, 131073, 1245205, 0, 65540, 1245206, 0, 196609, 1245207, 0, 196609, 1245208, 0, 196609, 1245209, 0, 196609, 1245210, 0, 196609, 1245211, 0, 196609, 1245212, 0, 196609, 1245213, 0, 196609, 1245214, 0, 196609, 1245215, 0, 196609, 1245216, 0, 196609, 1245217, 0, 196609, 1245218, 0, 196609, 1245219, 0, 327683 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="UnpressedButtonTile" type="TileMap" parent="Area2D"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 50, 50 )
+show_collision = true
+collision_use_parent = true
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 655373, 10, 0 )
+
+[node name="PressedButtonTile" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 50, 50 )
+collision_layer = 4
+collision_mask = 4
+format = 1
+tile_data = PoolIntArray( 655373, 11, 0 )
+
+[node name="doorArea" type="Area2D" parent="."]
+position = Vector2( 3, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="doorArea"]
+margin_left = 1030.0
+margin_top = 508.0
+margin_right = 1081.0
+margin_bottom = 608.0
+color = Color( 0.25098, 0.168627, 0.0588235, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorArea"]
+position = Vector2( 1052, 551 )
+shape = SubResource( 1 )
+
+[node name="box2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 739, 231 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="box3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 103, 168 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="box" parent="." instance=ExtResource( 4 )]
+position = Vector2( 634, 232 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 523 )
+
+[node name="ButtonTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
+[connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]

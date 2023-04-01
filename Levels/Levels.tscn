@@ -35,4 +35,5 @@ script = ExtResource( 11 )
 
 [node name="Puzzle_9" parent="." instance=ExtResource( 3 )]
 
+[connection signal="next_puzzle" from="Puzzle_3" to="." method="_on_Puzzle_3_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_10" to="." method="_on_Puzzle_10_next_puzzle"]
