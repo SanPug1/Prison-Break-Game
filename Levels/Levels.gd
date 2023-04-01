@@ -34,8 +34,11 @@ func _ready() -> void:
 #	remove_child($Puzzle_10)
 	
 func _on_Puzzle_10_next_puzzle() -> void:
-	add_child(Puzzle3)
-	remove_child($Puzzle_10)
-func _on_Puzzle_3_next_puzzle() -> void:
 	add_child(Puzzle2)
+	remove_child($Puzzle_10)
+func _on_Puzzle_2_next_puzzle() -> void:
+	add_child(Puzzle3)
+	remove_child($Puzzle_2)
+func _on_Puzzle_3_next_puzzle() -> void:
+	add_child(Puzzle4)
 	remove_child($Puzzle_3)

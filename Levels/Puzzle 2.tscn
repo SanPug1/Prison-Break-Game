@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Puzzle 2.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.25, 48.75 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.5, 27.5 )
@@ -11,7 +14,7 @@ extents = Vector2( 26.5, 27.5 )
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1062.0
+margin_right = 1087.0
 margin_bottom = 642.0
 color = Color( 0.482353, 0.470588, 0.517647, 1 )
 
@@ -42,6 +45,20 @@ margin_top = 3.0
 margin_right = 980.0
 margin_bottom = 43.0
 color = Color( 0.784314, 0.788235, 0.0823529, 1 )
+
+[node name="doorArea" type="Area2D" parent="."]
+position = Vector2( 3, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="doorArea"]
+margin_left = 1011.0
+margin_top = 90.0
+margin_right = 1062.0
+margin_bottom = 190.0
+color = Color( 0.25098, 0.168627, 0.0588235, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorArea"]
+position = Vector2( 1036, 139 )
+shape = SubResource( 2 )
 
 [node name="piece1" type="Area2D" parent="."]
 
@@ -131,6 +148,7 @@ format = 1
 tile_data = PoolIntArray( 65565, 1, 3, 131101, 1, 65539, 196637, 1, 65539, 262173, 1, 131075 )
 
 [connection signal="child_entered_tree" from="." to="Player" method="_on_Puzzle_2_child_entered_tree"]
+[connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
 [connection signal="body_entered" from="piece1" to="." method="_on_piece1_body_entered"]
 [connection signal="body_entered" from="piece2" to="." method="_on_piece2_body_entered"]
 [connection signal="body_entered" from="piece3" to="." method="_on_piece3_body_entered"]

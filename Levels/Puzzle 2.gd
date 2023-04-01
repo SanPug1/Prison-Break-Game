@@ -1,6 +1,6 @@
 extends Node2D
 
-
+signal next_puzzle
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -118,3 +118,6 @@ func _on_piece4_body_entered(body):
 			inQueue[1] = 4
 		gate4Open = true
 	pass # Replace with function body.
+
+func _on_doorArea_body_entered(body: Node) -> void:
+	emit_signal("next_puzzle")
