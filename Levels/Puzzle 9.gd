@@ -1,16 +1,56 @@
 extends Node2D
 
+signal next_puzzle
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+var bothbuttonspressed = 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	$Button1.show()
+	$Button2.show()
+	$Bars1.set_collision_layer_bit(0, true)
+	$Bars1.set_collision_mask_bit(0, true)
+	$Bars2.set_collision_layer_bit(0, true)
+	$Bars2.set_collision_mask_bit(0, true)
+	$door.set_collision_layer_bit(0, false)
+	$door.set_collision_mask_bit(0, false)
+	$door.hide()
 #func _process(delta: float) -> void:
 #	pass
+
+func _on_Button1_body_entered(body: Node) -> void:
+	bothbuttonspressed += 1
+	print(bothbuttonspressed)
+	$Button1.hide()
+	if bothbuttonspressed == 2:
+		$Bars1.set_collision_layer_bit(0, false)
+		$Bars1.set_collision_mask_bit(0, false)
+		$Bars1.hide()
+
+func _on_Button2_body_entered(body: Node) -> void:
+	bothbuttonspressed += 1
+	$Bars2.set_collision_layer_bit(0, false)
+	$Bars2.set_collision_mask_bit(0, false)
+	$Bars2.hide()
+	$Button2.hide()
+
+func _on_Button1_body_exited(body: Node) -> void:
+	$Bars1.set_collision_layer_bit(0, true)
+	$Bars1.set_collision_mask_bit(0, true)
+	$Bars1.show()
+	$Button1.show()
+	bothbuttonspressed -= 1
+
+func _on_Button2_body_exited(body: Node) -> void:
+	$Bars2.set_collision_layer_bit(0, true)
+	$Bars2.set_collision_mask_bit(0, true)
+	$Bars2.show()
+	$Button2.show()
+	bothbuttonspressed -= 1
+
+func _on_keyArea_body_exited(body: Node) -> void:
+	$door.set_collision_layer_bit(0, true)
+	$door.set_collision_mask_bit(0, true)
+	$door.show()
+
+func _on_door_body_entered(body: Node) -> void:
+	emit_signal("next_puzzle")
