@@ -26,6 +26,7 @@ position = Vector2( 40, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
 method_call_mode = 1
 anims/movement = ExtResource( 3 )
 

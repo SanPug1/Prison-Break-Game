@@ -25,8 +25,10 @@ func _process(delta):
 		$doorArea.hide()
 		$doorArea.set_collision_layer_bit(0, false)
 		$doorArea.set_collision_mask_bit(0, false)
+		$keyArea.set_collision_layer_bit(0, false)
+		$keyArea.set_collision_mask_bit(0, false)
 		firstrun = false
-
+		
 func _on_ButtonTimer_timeout() -> void:
 	$TileMap3.hide()
 	$keyArea.hide()
@@ -37,8 +39,11 @@ func _on_ButtonTimer_timeout() -> void:
 	$TileMap.set_collision_mask_bit(0, true)
 	$TileMap3.set_collision_layer_bit(0, false)
 	$TileMap3.set_collision_mask_bit(0, false)
+	$keyArea.set_collision_layer_bit(0, false)
+	$keyArea.set_collision_mask_bit(0, false)
 
 func _on_Area2D_body_entered(body: Node) -> void:
+	$ButtonTimer.stop()
 	$Area2D.hide()
 	$PressedButtonTile.show()
 	$TileMap.hide()
@@ -48,6 +53,8 @@ func _on_Area2D_body_entered(body: Node) -> void:
 	$TileMap3.set_collision_mask_bit(0, true)
 	$TileMap.set_collision_layer_bit(0, false)
 	$TileMap.set_collision_mask_bit(0, false)
+	$keyArea.set_collision_layer_bit(0, true)
+	$keyArea.set_collision_mask_bit(0, true)
 	
 func _on_Area2D_body_exited(body: Node) -> void:
 	$ButtonTimer.start()

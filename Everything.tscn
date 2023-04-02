@@ -10,3 +10,5 @@ script = ExtResource( 3 )
 [node name="Levels" parent="." instance=ExtResource( 2 )]
 
 [node name="Title_Screen" parent="." instance=ExtResource( 1 )]
+
+[connection signal="game_start" from="Title_Screen" to="." method="_on_Title_Screen_game_start"]
