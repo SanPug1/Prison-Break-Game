@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://Levels/Puzzle 8.gd" type="Script" id=4]
+[ext_resource path="res://Art/lightcircle.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.5, 46 )
@@ -25,6 +26,9 @@ tile_data = PoolIntArray( -1, 0, 262146, -65536, 0, 196609, -65535, 0, 196609, -
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 729, 557 )
+
+[node name="Light2D" type="Light2D" parent="Player"]
+texture = ExtResource( 5 )
 
 [node name="Gate" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -53,7 +57,7 @@ format = 1
 tile_data = PoolIntArray( 655361, 11, 0 )
 
 [node name="ButtonTimer" type="Timer" parent="."]
-wait_time = 5.75
+wait_time = 6.0
 
 [node name="doorArea" type="Area2D" parent="."]
 
@@ -67,6 +71,9 @@ color = Color( 0.25098, 0.168627, 0.0588235, 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doorArea"]
 position = Vector2( 62.5, 108 )
 shape = SubResource( 1 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
 
 [connection signal="body_entered" from="Button" to="." method="_on_Button_body_entered"]
 [connection signal="body_exited" from="Button" to="." method="_on_Button_body_exited"]

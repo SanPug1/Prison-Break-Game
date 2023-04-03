@@ -12,6 +12,8 @@ func _ready() -> void:
 	$Gate.set_collision_layer_bit(0, true)
 	$Gate.set_collision_mask_bit(0, true)
 	$Button.show()
+	$CanvasModulate.hide()
+	$Player/Light2D.hide()
 #func _process(delta: float) -> void:
 #	pass
 
@@ -20,6 +22,8 @@ func _on_Button_body_entered(body: Node) -> void:
 	$Gate.hide()
 	$Gate.set_collision_layer_bit(0, false)
 	$Gate.set_collision_mask_bit(0, false)
+	$CanvasModulate.show()
+	$Player/Light2D.show()
 
 func _on_Button_body_exited(body: Node) -> void:
 	$ButtonTimer.start()
@@ -29,6 +33,8 @@ func _on_ButtonTimer_timeout() -> void:
 	$Gate.set_collision_layer_bit(0, true)
 	$Gate.set_collision_mask_bit(0, true)
 	$Button.show()
+	$CanvasModulate.hide()
+	$Player/Light2D.hide()
 
 func _on_doorArea_body_entered(body: Node) -> void:
 	emit_signal("next_puzzle")
