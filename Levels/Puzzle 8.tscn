@@ -53,7 +53,7 @@ format = 1
 tile_data = PoolIntArray( 655361, 11, 0 )
 
 [node name="ButtonTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 5.75
 
 [node name="doorArea" type="Area2D" parent="."]
 
