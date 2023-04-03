@@ -31,7 +31,7 @@ func _ready() -> void:
 	Puzzle9 = $Puzzle_9
 	remove_child($Puzzle_9)
 	Puzzle10 = $Puzzle_10
-	remove_child($Puzzle_10)
+#	remove_child($Puzzle_10)
 	$song.play()
 	
 func _on_Puzzle_10_next_puzzle() -> void:
