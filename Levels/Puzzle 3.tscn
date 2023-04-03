@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.25, 48.75 )
 
-[node name="Puzzle_3" type="Node"]
+[node name="Puzzle_3" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -69,18 +69,12 @@ shape = SubResource( 1 )
 
 [node name="box2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 739, 231 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="box3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 103, 168 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="box" parent="." instance=ExtResource( 4 )]
 position = Vector2( 634, 232 )
-collision_layer = 3
-collision_mask = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 104, 523 )

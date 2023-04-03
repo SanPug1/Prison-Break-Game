@@ -16,7 +16,7 @@ script = ExtResource( 4 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1050.0
 margin_bottom = 640.0
-color = Color( 0.705882, 0.654902, 0.788235, 1 )
+color = Color( 0.482353, 0.470588, 0.517647, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -29,13 +29,13 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 4, -65535, 0, 196609, -65534, 0, 
 position = Vector2( 936, 558 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 66, 342 )
+position = Vector2( 66, 350 )
 
 [node name="box" parent="." instance=ExtResource( 5 )]
 position = Vector2( 911, 166 )
 
 [node name="box2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 253, 269 )
+position = Vector2( 253, 277 )
 
 [node name="Button1" type="Area2D" parent="."]
 collision_layer = 2
