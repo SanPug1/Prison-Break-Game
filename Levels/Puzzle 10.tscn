@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Puzzle 10.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.25, 48.75 )
@@ -16,6 +21,18 @@ script = ExtResource( 2 )
 margin_right = 1048.0
 margin_bottom = 645.0
 color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 42.0
+margin_right = 1048.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 2 )
+text = "Press A/D or right/left arrow keys to move side to side
+Press Space or Z to jump
+Walk into an object to use it/pick it up"
+align = 1
+valign = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )

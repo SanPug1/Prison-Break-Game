@@ -22,7 +22,7 @@ func _on_StartButton_button_up():
 	$TextTimer.stop()
 	pressedbutton = true
 	emit_signal("game_start")
-
+	
 func _on_TextTimer_timeout():
 	if visiblebutton == false and pressedbutton == false:
 		visiblebutton = true

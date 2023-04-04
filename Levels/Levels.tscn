@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Levels/Puzzle 1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Puzzle 8.tscn" type="PackedScene" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://Levels/Puzzle 7.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Levels.gd" type="Script" id=11]
 [ext_resource path="res://Music/Melanies_Prison_Escape_Song.wav" type="AudioStream" id=12]
+[ext_resource path="res://Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 13 )
 
 [node name="Levels" type="Node"]
 script = ExtResource( 11 )
@@ -40,9 +44,21 @@ script = ExtResource( 11 )
 stream = ExtResource( 12 )
 volume_db = -8.739
 
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -58.0
+margin_top = 3.0
+margin_right = 59.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "Reset Level"
+icon_align = 1
+
 [connection signal="next_puzzle" from="Puzzle_2" to="." method="_on_Puzzle_2_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_3" to="." method="_on_Puzzle_3_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_8" to="." method="_on_Puzzle_8_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_10" to="." method="_on_Puzzle_10_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_9" to="." method="_on_Puzzle_9_next_puzzle"]
 [connection signal="finished" from="song" to="." method="_on_song_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
