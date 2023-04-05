@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Puzzle 10.gd" type="Script" id=2]
@@ -13,6 +13,9 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.25, 48.75 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
 
 [node name="Puzzle_10" type="Node2D"]
 script = ExtResource( 2 )
@@ -109,8 +112,26 @@ position = Vector2( 773, 553 )
 wait_time = 1.5
 one_shot = true
 
+[node name="ResetLevelButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 467.0
+margin_top = 3.0
+margin_right = 622.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "Reset Box"
+icon_align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 773, 200 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_exited" from="keyArea" to="." method="_on_keyArea_body_exited"]
 [connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
 [connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]
+[connection signal="pressed" from="ResetLevelButton" to="." method="_on_ResetLevelButton_pressed"]

@@ -64,4 +64,9 @@ func _on_keyArea_body_exited(body: Node) -> void:
 
 func _on_doorArea_body_entered(body: Node) -> void:
 	emit_signal("next_puzzle")
+#	print("nono dont touch me there this is my nono square")
 	playerhaskey = false
+
+func _on_ResetLevelButton_pressed() -> void:
+	$box.position = get_node("spawn").position
+	$ResetLevelButton.release_focus()

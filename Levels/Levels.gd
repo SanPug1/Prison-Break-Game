@@ -30,11 +30,11 @@ func _ready() -> void:
 	Puzzle8 = $Puzzle_8
 	remove_child($Puzzle_8)
 	Puzzle9 = $Puzzle_9
-	remove_child($Puzzle_9)
+#	remove_child($Puzzle_9)
 	Puzzle10 = $Puzzle_10
-#	remove_child($Puzzle_10)
-	$song.play()
+	remove_child($Puzzle_10)
 	currentlevel = Puzzle10
+	$song.play()
 	
 func _on_Puzzle_10_next_puzzle() -> void:
 	remove_child($Puzzle_10)
@@ -54,8 +54,8 @@ func _on_Puzzle_8_next_puzzle() -> void:
 	currentlevel = Puzzle9
 func _on_Puzzle_9_next_puzzle() -> void:
 	remove_child($Puzzle_9)
-	add_child(Puzzle4)
-	currentlevel = Puzzle4
+	add_child(Puzzle7)
+	currentlevel = Puzzle7
 
 func _on_song_finished() -> void:
 	$song.play()

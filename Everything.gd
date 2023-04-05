@@ -7,5 +7,5 @@ func _ready():
 	remove_child($Levels)
 	
 func _on_Title_Screen_game_start() -> void:
-	remove_child($Title_Screen)
 	add_child(levels)
+	remove_child($Title_Screen)

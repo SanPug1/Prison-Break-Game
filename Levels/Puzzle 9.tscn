@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Platform.tscn" type="PackedScene" id=2]
@@ -6,9 +6,13 @@
 [ext_resource path="res://Levels/Puzzle 9.gd" type="Script" id=4]
 [ext_resource path="res://box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=6]
+[ext_resource path="res://Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.5, 47 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 7 )
 
 [node name="Puzzle_9" type="Node2D"]
 script = ExtResource( 4 )
@@ -111,9 +115,33 @@ color = Color( 0.25098, 0.168627, 0.0588235, 1 )
 position = Vector2( 1001.5, 557 )
 shape = SubResource( 1 )
 
+[node name="ResetLevelButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 467.0
+margin_top = 3.0
+margin_right = 622.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "Reset Boxes"
+icon_align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 909, 166 )
+
+[node name="spawn2" type="Position2D" parent="."]
+position = Vector2( 252, 275 )
+
+[node name="platformspawn" type="Position2D" parent="."]
+position = Vector2( 66, 350 )
+
 [connection signal="body_entered" from="Button1" to="." method="_on_Button1_body_entered"]
 [connection signal="body_exited" from="Button1" to="." method="_on_Button1_body_exited"]
 [connection signal="body_entered" from="Button2" to="." method="_on_Button2_body_entered"]
 [connection signal="body_exited" from="Button2" to="." method="_on_Button2_body_exited"]
 [connection signal="body_exited" from="keyArea" to="." method="_on_keyArea_body_exited"]
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
+[connection signal="pressed" from="ResetLevelButton" to="." method="_on_ResetLevelButton_pressed"]

@@ -47,3 +47,10 @@ func _on_Area2D_body_exited(body: Node) -> void:
 func _on_doorArea_body_entered(body: Node) -> void:
 	emit_signal("next_puzzle")
 	playerhaskey = false
+
+
+func _on_ResetLevelButton_pressed() -> void:
+	$box.position = get_node("spawn").position
+	$box2.position = get_node("spawn2").position
+	$box3.position = get_node("spawn3").position
+	$ResetLevelButton.release_focus()
