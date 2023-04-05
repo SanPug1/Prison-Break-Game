@@ -138,6 +138,9 @@ position = Vector2( 252, 275 )
 [node name="platformspawn" type="Position2D" parent="."]
 position = Vector2( 66, 350 )
 
+[node name="playerspawn" type="Position2D" parent="."]
+position = Vector2( 936, 557 )
+
 [connection signal="body_entered" from="Button1" to="." method="_on_Button1_body_entered"]
 [connection signal="body_exited" from="Button1" to="." method="_on_Button1_body_exited"]
 [connection signal="body_entered" from="Button2" to="." method="_on_Button2_body_entered"]

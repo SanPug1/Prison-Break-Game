@@ -58,8 +58,9 @@ func _on_door_body_entered(body: Node) -> void:
 
 func _on_ResetLevelButton_pressed() -> void:
 	$Platform/AnimationPlayer.stop()
-	$Platform/AnimationPlayer.start()
+	$Platform/AnimationPlayer.play("movement")
 	$Platform.position = get_node("platformspawn").position
 	$box.position = get_node("spawn").position
 	$box2.position = get_node("spawn2").position
+	$Player.position = get_node("playerspawn").position
 	$ResetLevelButton.release_focus()
