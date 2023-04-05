@@ -1,3 +1,104 @@
-[gd_scene format=2]
+[gd_scene load_steps=9 format=2]
 
-[node name="Puzzle_7" type="Node2D"]
+[ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art/lightcircle.png" type="Texture" id=4]
+[ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=5]
+[ext_resource path="res://box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Puzzle 7.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.75, 46.25 )
+
+[node name="Puzzle_7" type="Node"]
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1056.0
+margin_bottom = 649.0
+color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
+[node name="Gate" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458780, 1, 3, 524316, 1, 65539, 589852, 1, 65539, 655388, 1, 65539, 720924, 1, 65539, 786460, 1, 65539, 851996, 1, 327682, 851997, 1, 196609, 851998, 1, 196609, 851999, 1, 196610 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 262146, -65536, 0, 196609, -65535, 0, 196609, -65534, 0, 196609, -65533, 0, 196609, -65532, 0, 196609, -65531, 0, 196609, -65530, 0, 196609, -65529, 0, 196609, -65528, 0, 196609, -65527, 0, 196609, -65526, 0, 196609, -65525, 0, 196609, -65524, 0, 196609, -65523, 0, 196609, -65522, 0, 196609, -65521, 0, 196609, -65520, 0, 196609, -65519, 0, 196609, -65518, 0, 196609, -65517, 0, 196609, -65516, 0, 196609, -65515, 0, 196609, -65514, 0, 196609, -65513, 0, 196609, -65512, 0, 196609, -65511, 0, 196609, -65510, 0, 196609, -65509, 0, 196609, -65508, 0, 196609, -65507, 0, 196609, -65506, 0, 196609, -65505, 0, 196609, -65504, 0, 262147, 65535, 0, 65539, 32, 0, 65539, 131071, 0, 65539, 65568, 0, 65539, 196607, 0, 65539, 131104, 0, 65539, 262143, 0, 65539, 196640, 0, 65539, 327679, 0, 65539, 262149, 0, 196608, 262150, 0, 196609, 262151, 0, 196609, 262152, 0, 196610, 262176, 0, 65539, 393215, 0, 65539, 327708, 0, 196608, 327709, 0, 196609, 327710, 0, 196609, 327711, 0, 196609, 327712, 0, 196614, 458751, 0, 65539, 393248, 0, 65539, 524287, 0, 65539, 458764, 0, 196608, 458765, 0, 196609, 458766, 0, 196610, 458784, 0, 65539, 589823, 0, 65539, 524320, 0, 65539, 655359, 0, 65539, 589856, 0, 65539, 720895, 0, 65539, 655392, 0, 65539, 786431, 0, 65539, 720928, 0, 65539, 851967, 0, 65539, 786464, 0, 65539, 917503, 0, 65539, 851997, 0, 196608, 851998, 0, 196609, 851999, 0, 196609, 852000, 0, 196614, 983039, 0, 196612, 917504, 0, 196609, 917505, 0, 196609, 917506, 0, 196609, 917507, 0, 196609, 917508, 0, 196610, 917536, 0, 65539, 1048575, 0, 65539, 983072, 0, 65539, 1114111, 0, 65539, 1048608, 0, 65539, 1179647, 0, 65539, 1114125, 0, 0, 1114126, 0, 1, 1114127, 0, 1, 1114128, 0, 1, 1114129, 0, 2, 1114144, 0, 65539, 1245183, 0, 65539, 1179660, 0, 0, 1179661, 0, 327681, 1179662, 0, 65537, 1179663, 0, 65537, 1179664, 0, 65537, 1179665, 0, 327680, 1179666, 0, 1, 1179667, 0, 1, 1179668, 0, 2, 1179680, 0, 65539, 1310719, 0, 327682, 1245184, 0, 196609, 1245185, 0, 196609, 1245186, 0, 196609, 1245187, 0, 196609, 1245188, 0, 196609, 1245189, 0, 196609, 1245190, 0, 196609, 1245191, 0, 196609, 1245192, 0, 196609, 1245193, 0, 196609, 1245194, 0, 196609, 1245195, 0, 196609, 1245196, 0, 65541, 1245197, 0, 131073, 1245198, 0, 131073, 1245199, 0, 131073, 1245200, 0, 131073, 1245201, 0, 131073, 1245202, 0, 131073, 1245203, 0, 131073, 1245204, 0, 65540, 1245205, 0, 196609, 1245206, 0, 196609, 1245207, 0, 196609, 1245208, 0, 196609, 1245209, 0, 196609, 1245210, 0, 196609, 1245211, 0, 196609, 1245212, 0, 196609, 1245213, 0, 196609, 1245214, 0, 196609, 1245215, 0, 196609, 1245216, 0, 327683 )
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 42, 331 )
+
+[node name="box" parent="." instance=ExtResource( 6 )]
+position = Vector2( 206, 102 )
+
+[node name="box2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 448, 197 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 838, 555 )
+
+[node name="Light2D" type="Light2D" parent="Player"]
+position = Vector2( 0, 2 )
+scale = Vector2( 1.36328, 1.36328 )
+texture = ExtResource( 4 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 838, 555 )
+color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+
+[node name="Button1" type="Area2D" parent="."]
+
+[node name="unpressedbutton2" type="TileMap" parent="Button1"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 50, 50 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 524289, 10, 0 )
+
+[node name="Button2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="unpressedbutton" type="TileMap" parent="Button2"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 50, 50 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 655369, 10, 0 )
+
+[node name="pressedbutton" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 50, 50 )
+format = 1
+tile_data = PoolIntArray( 524289, 11, 0 )
+
+[node name="doorArea" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="doorArea"]
+margin_left = 947.0
+margin_top = 61.0
+margin_right = 997.0
+margin_bottom = 161.0
+color = Color( 0.25098, 0.168627, 0.0588235, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorArea"]
+position = Vector2( 972, 110 )
+shape = SubResource( 1 )
+
+[node name="keyArea" type="Area2D" parent="."]
+
+[node name="key" type="TileMap" parent="keyArea"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 458782, 2, 0, 524318, 2, 0, 655390, 3, 0 )
