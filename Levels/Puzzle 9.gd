@@ -3,6 +3,7 @@ extends Node2D
 signal next_puzzle
 
 var bothbuttonspressed = 0
+var playerhaskey = false
 
 func _ready() -> void:
 	$Button1.show()
@@ -58,6 +59,7 @@ func _on_keyArea_body_entered(body: Node) -> void:
 
 func _on_door_body_entered(body: Node) -> void:
 	emit_signal("next_puzzle")
+	playerhaskey = false
 
 
 func _on_ResetLevelButton_pressed() -> void:

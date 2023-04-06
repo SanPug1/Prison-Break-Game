@@ -20,7 +20,7 @@ func _ready() -> void:
 	Puzzle3 = $Puzzle_3
 	remove_child($Puzzle_3)
 	Puzzle4 = $Puzzle_4
-	remove_child($Puzzle_4)
+	#remove_child($Puzzle_4)
 	Puzzle5 = $Puzzle_5
 	remove_child($Puzzle_5)
 	Puzzle6 = $Puzzle_6
@@ -32,9 +32,14 @@ func _ready() -> void:
 	Puzzle9 = $Puzzle_9
 	remove_child($Puzzle_9)
 	Puzzle10 = $Puzzle_10
+<<<<<<< Updated upstream
 	#remove_child($Puzzle_10)
 	currentlevel = Puzzle10
+=======
+	remove_child($Puzzle_10)
+>>>>>>> Stashed changes
 	$song.play()
+	currentlevel = Puzzle10
 	
 func _on_Puzzle_10_next_puzzle() -> void:
 	remove_child($Puzzle_10)
@@ -46,6 +51,10 @@ func _on_Puzzle_2_next_puzzle() -> void:
 	currentlevel = Puzzle3
 func _on_Puzzle_3_next_puzzle() -> void:
 	remove_child($Puzzle_3)
+	add_child(Puzzle4)
+	currentlevel = Puzzle4
+func _on_Puzzle_4_next_puzzle():
+	remove_child($Puzzle_4)
 	add_child(Puzzle8)
 	currentlevel = Puzzle8
 func _on_Puzzle_8_next_puzzle() -> void:
@@ -54,6 +63,7 @@ func _on_Puzzle_8_next_puzzle() -> void:
 	currentlevel = Puzzle9
 func _on_Puzzle_9_next_puzzle() -> void:
 	remove_child($Puzzle_9)
+<<<<<<< Updated upstream
 	add_child(Puzzle7)
 	currentlevel = Puzzle7
 func _on_Puzzle_7_next_puzzle() -> void:
@@ -63,3 +73,16 @@ func _on_Puzzle_7_next_puzzle() -> void:
 
 func _on_song_finished() -> void:
 	$song.play()
+=======
+	add_child(Puzzle5)
+	currentlevel = Puzzle5
+
+func _on_song_finished() -> void:
+	$song.play()
+
+func _on_Button_pressed() -> void:
+	pass
+
+
+
+>>>>>>> Stashed changes

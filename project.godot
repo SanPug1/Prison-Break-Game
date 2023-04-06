@@ -127,7 +127,3 @@ project/assembly_name="Final Project"
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

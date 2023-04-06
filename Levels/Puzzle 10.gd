@@ -65,6 +65,7 @@ func _on_keyArea_body_entered(body: Node) -> void:
 	$doorArea.show()
 	$doorArea.set_collision_layer_bit(0, true)
 	$doorArea.set_collision_mask_bit(0, true)
+	
 
 func _on_doorArea_body_entered(body: Node) -> void:
 	emit_signal("next_puzzle")
