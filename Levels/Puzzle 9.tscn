@@ -88,6 +88,14 @@ collision_use_parent = true
 format = 1
 tile_data = PoolIntArray( 196611, 3, 0 )
 
+[node name="keygone" type="TileMap" parent="keyArea"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 196611, 6, 0 )
+
 [node name="Bars1" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
@@ -145,6 +153,7 @@ position = Vector2( 936, 557 )
 [connection signal="body_exited" from="Button1" to="." method="_on_Button1_body_exited"]
 [connection signal="body_entered" from="Button2" to="." method="_on_Button2_body_entered"]
 [connection signal="body_exited" from="Button2" to="." method="_on_Button2_body_exited"]
+[connection signal="body_entered" from="keyArea" to="." method="_on_keyArea_body_entered"]
 [connection signal="body_exited" from="keyArea" to="." method="_on_keyArea_body_exited"]
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
 [connection signal="pressed" from="ResetLevelButton" to="." method="_on_ResetLevelButton_pressed"]

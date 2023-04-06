@@ -7,6 +7,8 @@ var bothbuttonspressed = 0
 func _ready() -> void:
 	$Button1.show()
 	$Button2.show()
+	$keyArea/key.show()
+	$keyArea/keygone.hide()
 	$Bars1.set_collision_layer_bit(0, true)
 	$Bars1.set_collision_mask_bit(0, true)
 	$Bars2.set_collision_layer_bit(0, true)
@@ -47,7 +49,9 @@ func _on_Button2_body_exited(body: Node) -> void:
 	$Button2.show()
 	bothbuttonspressed -= 1
 
-func _on_keyArea_body_exited(body: Node) -> void:
+func _on_keyArea_body_entered(body: Node) -> void:
+	$keyArea/key.hide()
+	$keyArea/keygone.show()
 	$door.set_collision_layer_bit(0, true)
 	$door.set_collision_mask_bit(0, true)
 	$door.show()
@@ -64,3 +68,5 @@ func _on_ResetLevelButton_pressed() -> void:
 	$box2.position = get_node("spawn2").position
 	$Player.position = get_node("playerspawn").position
 	$ResetLevelButton.release_focus()
+
+

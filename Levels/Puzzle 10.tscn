@@ -88,6 +88,16 @@ collision_use_parent = true
 format = 1
 tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 196610, 3, 0 )
 
+[node name="keygone" type="TileMap" parent="keyArea"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 50, 0, 0, 50, 0, 0 )
+show_collision = true
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 196610, 6, 0 )
+
 [node name="doorArea" type="Area2D" parent="."]
 position = Vector2( 3, 2 )
 
@@ -120,7 +130,7 @@ margin_top = 3.0
 margin_right = 622.0
 margin_bottom = 32.0
 custom_fonts/font = SubResource( 3 )
-text = "Reset Box"
+text = "Reset Boxes"
 icon_align = 1
 __meta__ = {
 "_editor_description_": ""
@@ -131,6 +141,7 @@ position = Vector2( 773, 200 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="keyArea" to="." method="_on_keyArea_body_entered"]
 [connection signal="body_exited" from="keyArea" to="." method="_on_keyArea_body_exited"]
 [connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
 [connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]

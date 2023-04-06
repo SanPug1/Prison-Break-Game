@@ -9,6 +9,8 @@ var playerhaskey = false
 func _ready():
 	$TileMap.show()
 	$TileMap3.hide()
+	$keyArea/key.show()
+	$keyArea/keygone.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -56,8 +58,10 @@ func _on_Area2D_body_entered(body: Node) -> void:
 func _on_Area2D_body_exited(body: Node) -> void:
 	$ButtonTimer.start()
 
-func _on_keyArea_body_exited(body: Node) -> void:
+func _on_keyArea_body_entered(body: Node) -> void:
 	playerhaskey = true
+	$keyArea/key.hide()
+	$keyArea/keygone.show()
 	$doorArea.show()
 	$doorArea.set_collision_layer_bit(0, true)
 	$doorArea.set_collision_mask_bit(0, true)

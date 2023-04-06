@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=152 format=2]
+[gd_resource type="TileSet" load_steps=153 format=2]
 
 [ext_resource path="res://Art/bars_sheet_32.png" type="Texture" id=1]
 [ext_resource path="res://Art/stone_sheet_32.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Art/Key_32.png" type="Texture" id=4]
 [ext_resource path="res://Art/button.png" type="Texture" id=5]
 [ext_resource path="res://Art/buttonunpressed.png" type="Texture" id=6]
+[ext_resource path="res://Art/Key_gone_32.png" type="Texture" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=48]
 polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -1145,3 +1146,17 @@ points = PoolVector2Array( 15, 40, 33, 41, 33, 50, 17, 50 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
+6/name = "Key_gone_32.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 32, 32 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
