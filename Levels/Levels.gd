@@ -26,13 +26,13 @@ func _ready() -> void:
 	Puzzle6 = $Puzzle_6
 	remove_child($Puzzle_6)
 	Puzzle7 = $Puzzle_7
-	#remove_child($Puzzle_7)
+	remove_child($Puzzle_7)
 	Puzzle8 = $Puzzle_8
 	remove_child($Puzzle_8)
 	Puzzle9 = $Puzzle_9
 	remove_child($Puzzle_9)
 	Puzzle10 = $Puzzle_10
-	remove_child($Puzzle_10)
+	#remove_child($Puzzle_10)
 	currentlevel = Puzzle10
 	$song.play()
 
