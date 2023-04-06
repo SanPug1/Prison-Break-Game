@@ -43,6 +43,7 @@ volume_db = -10.458
 [connection signal="next_puzzle" from="Puzzle_2" to="." method="_on_Puzzle_2_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_3" to="." method="_on_Puzzle_3_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_4" to="." method="_on_Puzzle_4_next_puzzle"]
+[connection signal="next_puzzle" from="Puzzle_7" to="." method="_on_Puzzle_7_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_8" to="." method="_on_Puzzle_8_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_10" to="." method="_on_Puzzle_10_next_puzzle"]
 [connection signal="next_puzzle" from="Puzzle_9" to="." method="_on_Puzzle_9_next_puzzle"]
