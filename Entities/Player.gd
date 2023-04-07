@@ -3,6 +3,8 @@ extends KinematicBody2D
 # warning-ignore-all:unused_argument
 # warning-ignore-all:export_hint_type_mistmatch
 
+class_name Player
+
 # Gravity Variables
 export(Vector2) var gravity = Vector2.DOWN
 export(float) var gravityStrength = 15
@@ -18,6 +20,8 @@ export(Vector2) var directionalVelocityLimit = Vector2(400, -1)
 # Physics stuff...
 var velocity = Vector2.ZERO
 var queuedAccel = Vector2.ZERO
+
+var spawnpoint : Vector2 = Vector2.ZERO
 
 # Velocity Overrides:
 var zeroBeforeAccel = {
@@ -53,7 +57,7 @@ var coyote = 0
 var lock = false
 
 func _ready():
-	pass
+	spawnpoint = position
 
 func _process(_delta):
 	if lock:
@@ -169,3 +173,8 @@ func apply_zero_dict(dict):
 		bottomRight.y = 0
 	velocity.x = clamp(velocity.x, topLeft.x, bottomRight.x)
 	velocity.y = clamp(velocity.y, topLeft.y, bottomRight.y)
+
+func reset_position():
+	position = spawnpoint
+	velocity = Vector2.ZERO
+	queuedAccel = Vector2.ZERO

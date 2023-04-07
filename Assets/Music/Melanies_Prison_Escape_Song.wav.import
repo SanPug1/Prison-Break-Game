@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Melanies_Prison_Escape_Song.wav-3bb2e542e83dc879ed6ae66511081978.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Melanies_Prison_Escape_Song.wav"
+dest_files=[ "res://.import/Melanies_Prison_Escape_Song.wav-3bb2e542e83dc879ed6ae66511081978.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

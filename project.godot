@@ -9,13 +9,61 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Darkness",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Darkness.gd"
+}, {
+"base": "Area2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Door.gd"
+}, {
+"base": "Area2D",
+"class": "FloorButton",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Button.gd"
+}, {
+"base": "Node2D",
+"class": "Gate",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Gate.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "MoveableBox",
 "language": "GDScript",
-"path": "res://box.gd"
+"path": "res://Puzzle Elements/Scripts/box.gd"
+}, {
+"base": "Node2D",
+"class": "MovingPlatform",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Moving_Platform.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Entities/Player.gd"
+}, {
+"base": "Node2D",
+"class": "Spotlight",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Light.gd"
+}, {
+"base": "Node2D",
+"class": "Switch",
+"language": "GDScript",
+"path": "res://Puzzle Elements/Scripts/Switch.gd"
 } ]
 _global_script_class_icons={
-"MoveableBox": ""
+"Darkness": "",
+"Door": "",
+"FloorButton": "",
+"Gate": "",
+"MoveableBox": "",
+"MovingPlatform": "",
+"Player": "",
+"Spotlight": "",
+"Switch": ""
 }
 
 [application]
@@ -32,6 +80,30 @@ window/size/height=640
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -117,8 +189,9 @@ interact={
 
 [layer_names]
 
-2d_physics/layer_1="player"
+2d_physics/layer_1="objects"
 2d_physics/layer_2="world"
+2d_physics/layer_3="player"
 
 [mono]
 

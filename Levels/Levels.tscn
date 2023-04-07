@@ -11,7 +11,7 @@
 [ext_resource path="res://Levels/Puzzle 2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Levels/Puzzle 7.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Levels.gd" type="Script" id=11]
-[ext_resource path="res://Music/Melanies_Prison_Escape_Song.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Music/Melanies_Prison_Escape_Song.wav" type="AudioStream" id=12]
 
 [node name="Levels" type="Node"]
 script = ExtResource( 11 )

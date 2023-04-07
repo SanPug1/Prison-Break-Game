@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Player.gd" type="Script" id=1]
-[ext_resource path="res://Art/characterneutral.png" type="Texture" id=2]
-[ext_resource path="res://Art/characterwalk1.png" type="Texture" id=3]
-[ext_resource path="res://Art/characterwalk2.png" type="Texture" id=4]
-[ext_resource path="res://Art/characterneutralbackarm.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/characterneutral.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/characterwalk1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/characterwalk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/characterneutralbackarm.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -22,9 +22,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 14.5, 46 )
 
-[node name="Player" type="KinematicBody2D"]
-collision_layer = 3
-collision_mask = 3
+[node name="Player" type="KinematicBody2D" groups=["physics_element", "resettable"]]
+z_index = 1
+collision_layer = 7
+collision_mask = 7
 script = ExtResource( 1 )
 
 [node name="Anims" type="AnimatedSprite" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Art/characterneutral.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/characterneutral.png" type="Texture" id=1]
 [ext_resource path="res://Player_Mel_Version.gd" type="Script" id=2]
-[ext_resource path="res://Art/characterwalk1.png" type="Texture" id=3]
-[ext_resource path="res://Art/characterwalk2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/characterwalk1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/characterwalk2.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

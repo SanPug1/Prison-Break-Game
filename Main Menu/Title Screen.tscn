@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main Menu/Title Screen.gd" type="Script" id=1]
-[ext_resource path="res://Music/Mels_video_game_song.wav" type="AudioStream" id=2]
-[ext_resource path="res://Art/mainmenu2redone.png" type="Texture" id=3]
-[ext_resource path="res://Art/mainmenu1redone.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Music/Mels_video_game_song.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Art/mainmenu2redone.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/mainmenu1redone.png" type="Texture" id=4]
 [ext_resource path="res://Main Menu/Title Screen.tres" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
