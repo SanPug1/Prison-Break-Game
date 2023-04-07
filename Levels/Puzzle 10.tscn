@@ -1,13 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Puzzle 10.gd" type="Script" id=2]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.25, 48.75 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 6 )
 
 [node name="Puzzle_10" type="Node2D"]
 script = ExtResource( 2 )
@@ -16,6 +24,18 @@ script = ExtResource( 2 )
 margin_right = 1048.0
 margin_bottom = 645.0
 color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 42.0
+margin_right = 1048.0
+margin_bottom = 645.0
+custom_fonts/font = SubResource( 2 )
+text = "Press A/D or right/left arrow keys to move side to side
+Press Space or Z to jump
+Walk into an object to use it/pick it up"
+align = 1
+valign = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -68,6 +88,16 @@ collision_use_parent = true
 format = 1
 tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 196610, 3, 0 )
 
+[node name="keygone" type="TileMap" parent="keyArea"]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 50, 0, 0, 50, 0, 0 )
+show_collision = true
+collision_use_parent = true
+format = 1
+tile_data = PoolIntArray( 65537, 7, 0, 65538, 2, 0, 196610, 6, 0 )
+
 [node name="doorArea" type="Area2D" parent="."]
 position = Vector2( 3, 2 )
 
@@ -92,8 +122,27 @@ position = Vector2( 773, 553 )
 wait_time = 1.5
 one_shot = true
 
+[node name="ResetLevelButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 467.0
+margin_top = 3.0
+margin_right = 622.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "Reset Boxes"
+icon_align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 773, 200 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="keyArea" to="." method="_on_keyArea_body_entered"]
 [connection signal="body_exited" from="keyArea" to="." method="_on_keyArea_body_exited"]
 [connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
 [connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]
+[connection signal="pressed" from="ResetLevelButton" to="." method="_on_ResetLevelButton_pressed"]

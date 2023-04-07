@@ -1,3 +1,121 @@
-[gd_scene format=2]
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Levels/Autotile_Tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Puzzle 4.gd" type="Script" id=3]
+[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/MelsTileSet.tres" type="TileSet" id=5]
+[ext_resource path="res://box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.25, 48.75 )
 
 [node name="Puzzle_4" type="Node"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 262146, -65536, 0, 196609, -65535, 0, 196609, -65534, 0, 196609, -65533, 0, 196609, -65532, 0, 196609, -65531, 0, 196609, -65530, 0, 196609, -65529, 0, 196609, -65528, 0, 196609, -65527, 0, 196609, -65526, 0, 196609, -65525, 0, 196609, -65524, 0, 196609, -65523, 0, 196609, -65522, 0, 196609, -65521, 0, 196609, -65520, 0, 196609, -65519, 0, 196609, -65518, 0, 196609, -65517, 0, 196609, -65516, 0, 196609, -65515, 0, 196609, -65514, 0, 196609, -65513, 0, 196609, -65512, 0, 196609, -65511, 0, 196609, -65510, 0, 196609, -65509, 0, 196609, -65508, 0, 196609, -65507, 0, 196609, -65506, 0, 196609, -65505, 0, 196609, -65504, 0, 196609, -65503, 0, 196609, -65502, 0, 196609, -65501, 0, 196609, -65500, 0, 262147, 65535, 0, 65539, 36, 0, 65539, 131071, 0, 65539, 65572, 0, 65539, 196607, 0, 65539, 131108, 0, 65539, 262143, 0, 65539, 196644, 0, 65539, 327679, 0, 65539, 262180, 0, 65539, 393215, 0, 65539, 327716, 0, 65539, 458751, 0, 65539, 393252, 0, 65539, 524287, 0, 65539, 458788, 0, 65539, 589823, 0, 65539, 524324, 0, 65539, 655359, 0, 65539, 589860, 0, 65539, 720895, 0, 65539, 655396, 0, 65539, 786431, 0, 65539, 720913, 0, 196608, 720914, 0, 196610, 720932, 0, 65539, 851967, 0, 65539, 786468, 0, 65539, 917503, 0, 65539, 852004, 0, 65539, 983039, 0, 65539, 917540, 0, 65539, 1048575, 0, 65539, 983076, 0, 65539, 1114111, 0, 65539, 1048612, 0, 65539, 1179647, 0, 65539, 1114124, 0, 3, 1114148, 0, 65539, 1245183, 0, 65539, 1179659, 0, 0, 1179660, 0, 65543, 1179684, 0, 65539, 1310719, 0, 327682, 1245184, 0, 196609, 1245185, 0, 196609, 1245186, 0, 196609, 1245187, 0, 196609, 1245188, 0, 196609, 1245189, 0, 196609, 1245190, 0, 196609, 1245191, 0, 196609, 1245192, 0, 196609, 1245193, 0, 196609, 1245194, 0, 196609, 1245195, 0, 65541, 1245196, 0, 65540, 1245197, 0, 196609, 1245198, 0, 196609, 1245199, 0, 196609, 1245200, 0, 196609, 1245201, 0, 196609, 1245202, 0, 196609, 1245203, 0, 196609, 1245204, 0, 196609, 1245205, 0, 196609, 1245206, 0, 196609, 1245207, 0, 196609, 1245208, 0, 196609, 1245209, 0, 196609, 1245210, 0, 196609, 1245211, 0, 196609, 1245212, 0, 196609, 1245213, 0, 196609, 1245214, 0, 196609, 1245215, 0, 196609, 1245216, 0, 196609, 1245217, 0, 196609, 1245218, 0, 196609, 1245219, 0, 196609, 1245220, 0, 327683 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1009, 146 )
+rotation = 1.57174
+scale = Vector2( 0.24043, 0.733828 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 773, 553 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 874, 358 )
+rotation = 3.14486
+scale = Vector2( 0.24043, 0.733828 )
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 915, 318 )
+rotation = 4.71244
+scale = Vector2( 0.24043, 0.733828 )
+
+[node name="box" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1006, 113 )
+
+[node name="PressedButtonTile" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 50, 50 )
+collision_layer = 4
+collision_mask = 4
+format = 1
+tile_data = PoolIntArray( 393227, 11, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="UnpressedButtonTile" type="TileMap" parent="Area2D"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 50, 50 )
+show_collision = true
+collision_use_parent = true
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 393227, 10, 0 )
+
+[node name="ResetLevelButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -72.0
+margin_top = 2.0
+margin_right = 83.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 2 )
+text = "Reset Boxes"
+icon_align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="spawn" type="Position2D" parent="."]
+position = Vector2( 1005, 119 )
+
+[node name="ButtonTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 5, 1, 3, 65541, 1, 65539, 131077, 1, 65539, 196613, 1, 65539, 262149, 1, 65539, 327685, 1, 65539, 458751, 1, 196608, 393216, 1, 196609, 393217, 1, 196609, 393218, 1, 196609, 393219, 1, 196609, 393220, 1, 196609, 393221, 1, 327683 )
+
+[node name="Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 177, 346 )
+rotation = 3.14486
+scale = Vector2( 0.24043, 0.733828 )
+
+[node name="doorArea" type="Area2D" parent="."]
+position = Vector2( 3, 2 )
+
+[node name="ColorRect" type="ColorRect" parent="doorArea"]
+margin_left = 40.0
+margin_top = 34.0
+margin_right = 91.0
+margin_bottom = 134.0
+color = Color( 0.25098, 0.168627, 0.0588235, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doorArea"]
+position = Vector2( 65, 84 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="pressed" from="ResetLevelButton" to="." method="_on_ResetLevelButton_pressed"]
+[connection signal="timeout" from="ButtonTimer" to="." method="_on_ButtonTimer_timeout"]
+[connection signal="body_entered" from="doorArea" to="." method="_on_doorArea_body_entered"]
