@@ -74,7 +74,7 @@ margin_right = 304.0
 margin_bottom = 16.0
 custom_fonts/font = SubResource( 4 )
 text = "
-Press Start to Play!"
+Press start to play!"
 align = 1
 valign = 1
 

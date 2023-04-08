@@ -9,7 +9,6 @@
 script = ExtResource( 4 )
 
 [node name="Manager" parent="." instance=ExtResource( 1 )]
-start_immediately = false
 
 [node name="Credits" parent="." instance=ExtResource( 3 )]
 
