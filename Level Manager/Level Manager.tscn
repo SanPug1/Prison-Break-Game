@@ -15,5 +15,6 @@ levels_in_order = [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtRes
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -8.595
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]

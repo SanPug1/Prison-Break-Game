@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Music/Mels_video_game_song.wav" type="AudioStream" id=2]
 [ext_resource path="res://Assets/Art/mainmenu2redone.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/mainmenu1redone.png" type="Texture" id=4]
-[ext_resource path="res://Main Menu/Title Screen.tres" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://Fonts/joystix/joystix monospace.otf"
+font_path = "res://Assets/Fonts/joystix/joystix monospace.otf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -21,14 +21,14 @@ font_data = ExtResource( 5 )
 script = ExtResource( 1 )
 
 [node name="MainMenuBackground2" type="TextureRect" parent="."]
-margin_right = 1048.0
-margin_bottom = 600.0
+margin_right = 1050.0
+margin_bottom = 650.0
 texture = ExtResource( 3 )
 expand = true
 
 [node name="MainMenuBackground" type="TextureRect" parent="."]
-margin_right = 1048.0
-margin_bottom = 600.0
+margin_right = 1050.0
+margin_bottom = 650.0
 texture = ExtResource( 4 )
 expand = true
 

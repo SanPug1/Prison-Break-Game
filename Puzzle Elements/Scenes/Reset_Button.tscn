@@ -16,7 +16,10 @@ margin_right = 168.0
 margin_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
 custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
 text = "Reset Puzzle"
 
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_reset_all_resettables"]
