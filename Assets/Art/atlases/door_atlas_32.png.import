@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/switch_atlas.png-9afd5664bc06625dbb432f509c25487d.stex"
+path="res://.import/door_atlas_32.png-82348aa2d3742a8fa52f497cc0553b1d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/atlases/switch_atlas.png"
-dest_files=[ "res://.import/switch_atlas.png-9afd5664bc06625dbb432f509c25487d.stex" ]
+source_file="res://Assets/Art/atlases/door_atlas_32.png"
+dest_files=[ "res://.import/door_atlas_32.png-82348aa2d3742a8fa52f497cc0553b1d.stex" ]
 
 [params]
 

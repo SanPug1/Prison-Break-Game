@@ -60,8 +60,8 @@ func _process(delta):
 			effective_motion_vec = Vector2.ZERO
 			current_motion_vec = Vector2.ZERO
 		$GateMask/GateBars.position = nextPos
-		$GateCollision/GateColShape.position += effective_motion_vec * 0.25
-		$GateCollision/GateColShape.shape.extents -= 0.25 * effective_motion_vec * open_dir_vec
+		$GateCollision/GateColShape.position = nextPos * 0.25 + Vector2(0, gate_dims_pixels.y * 0.25) + 4 * open_dir_vec * Vector2.RIGHT
+		$GateCollision/GateColShape.shape.extents = 0.25 * (gate_dims_pixels - nextPos.abs()) - Vector2(4 + 4*abs(open_dir_vec.y), 0)
 
 func _set_open_direction(open_dir):
 	#print("Setting opening direction...")

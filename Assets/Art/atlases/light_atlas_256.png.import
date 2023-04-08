@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Chain_32.png-ff690573a25a86e175985d9ea53cdfe6.stex"
+path="res://.import/light_atlas_256.png-afebcc40358335ed59aeaeb062faf9b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Chain_32.png"
-dest_files=[ "res://.import/Chain_32.png-ff690573a25a86e175985d9ea53cdfe6.stex" ]
+source_file="res://Assets/Art/atlases/light_atlas_256.png"
+dest_files=[ "res://.import/light_atlas_256.png-afebcc40358335ed59aeaeb062faf9b6.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

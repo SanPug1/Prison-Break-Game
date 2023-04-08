@@ -2,9 +2,16 @@
 
 [ext_resource path="res://Puzzle Elements/Scripts/Darkness.gd" type="Script" id=1]
 
-[node name="Darkness" type="Node" groups=["puzzle_signal_listeners"]]
+[node name="Darkness" type="Node2D" groups=["puzzle_signal_listeners"]]
 script = ExtResource( 1 )
+delay_activate = 0
+delay_deactivate = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
-color = Color( 0, 0, 0, 0.784314 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="DelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DelayTimer" to="." method="_after_delay"]

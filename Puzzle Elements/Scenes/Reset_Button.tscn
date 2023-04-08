@@ -6,22 +6,17 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
 
-[node name="Reset" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Reset" type="CenterContainer"]
+margin_right = 168.0
+margin_bottom = 26.0
 script = ExtResource( 2 )
 
-[node name="Layer" type="CanvasLayer" parent="."]
-layer = 10
-
-[node name="Button" type="Button" parent="Layer"]
-margin_left = -149.0
-margin_top = -16.0
-margin_right = 149.0
-margin_bottom = 16.0
+[node name="Button" type="Button" parent="."]
+margin_right = 168.0
+margin_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 1 )
-text = "Reset Player and Boxes"
+text = "Reset Puzzle"
 
-[connection signal="pressed" from="Layer/Button" to="." method="_reset_all_resettables"]
+[connection signal="pressed" from="Button" to="." method="_reset_all_resettables"]

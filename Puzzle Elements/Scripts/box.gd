@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name MoveableBox
 
-export var gravity = 200
+export(Vector2) var gravity_vec = Vector2.DOWN
+export(float) var gravity_strength : float = 15
 
 var velocity = Vector2.ZERO
 var snap = Vector2.DOWN * 16
@@ -11,10 +12,10 @@ var spawnpoint : Vector2 = Vector2.ZERO
 func _ready():
 	spawnpoint = position
 
-func _physics_process(_delta: float) -> void:
-	velocity.y += gravity
+func _physics_process(_delta):
+	velocity += gravity_vec * gravity_strength
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
-	#velocity = Vector2.ZERO
+	velocity.x = 0
 
 func slide(vector):
 	velocity.x = vector.x

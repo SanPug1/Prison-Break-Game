@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light_atlas.png-97bbe68f51d3bc11ec97866cec30921f.stex"
+path="res://.import/key_atlas_32.png-64ed432214aa20981e42f351bf2a5569.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/atlases/light_atlas.png"
-dest_files=[ "res://.import/light_atlas.png-97bbe68f51d3bc11ec97866cec30921f.stex" ]
+source_file="res://Assets/Art/atlases/key_atlas_32.png"
+dest_files=[ "res://.import/key_atlas_32.png-64ed432214aa20981e42f351bf2a5569.stex" ]
 
 [params]
 
