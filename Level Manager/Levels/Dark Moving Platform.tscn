@@ -58,6 +58,7 @@ position = Vector2( 880, 552 )
 
 [node name="Light" parent="Player" instance=ExtResource( 10 )]
 listener_id = 1
+light_scale = 4
 invert_behaviour = true
 
 [node name="Darkness" parent="." instance=ExtResource( 11 )]
