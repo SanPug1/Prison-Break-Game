@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level Manager/Level Manager.gd" type="Script" id=1]
 [ext_resource path="res://Level Manager/Levels/Dark Moving Platform.tscn" type="PackedScene" id=2]
@@ -6,10 +6,11 @@
 [ext_resource path="res://Level Manager/Levels/Dark Speedrun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Level Manager/Levels/Moving Platform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Level Manager/Levels/Four Moving Platforms.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Level Manager/Levels/Instruction Level.tscn" type="PackedScene" id=7]
 
 [node name="Manager" type="Node" groups=["level_manager"]]
 script = ExtResource( 1 )
-levels_in_order = [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ]
+levels_in_order = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ]
 
 [node name="Level" type="Node" parent="."]
 

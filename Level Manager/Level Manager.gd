@@ -1,7 +1,7 @@
 extends Node
 
 export(Array, PackedScene) var levels_in_order
-
+signal credits
 var current_level_index = 0
 var current_level = null
 
@@ -23,6 +23,7 @@ func load_next_level():
 
 func load_level(level):
 	if level >= len(levels_in_order) or level < 0:
+		emit_signal("credits")
 		return
 	if current_level != null:
 		current_level.queue_free()

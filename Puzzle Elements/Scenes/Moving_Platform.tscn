@@ -5,6 +5,7 @@
 
 [node name="Moving Platform" type="Node2D" groups=["resettable"]]
 script = ExtResource( 1 )
+track_duration = 6.0
 
 [node name="PathLine" type="Line2D" parent="."]
 default_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )

@@ -15,3 +15,8 @@ func _on_Title_Screen_game_start() -> void:
 	remove_child($Title_Screen)
 	add_child(levels)
 	$Manager.start_playing()
+
+
+func _on_Manager_credits() -> void:
+	remove_child($Manager)
+	add_child(Credits)

@@ -14,4 +14,5 @@ script = ExtResource( 4 )
 
 [node name="Title_Screen" parent="." instance=ExtResource( 2 )]
 
+[connection signal="credits" from="Manager" to="." method="_on_Manager_credits"]
 [connection signal="game_start" from="Title_Screen" to="." method="_on_Title_Screen_game_start"]
