@@ -6,7 +6,10 @@ class_name Door
 export(bool) var enabled = true setget _set_enabled
 
 func _ready():
-	pass
+	if enabled:
+		$DoorSpr.texture.region.position.x = 0
+	else:
+		$DoorSpr.texture.region.position.x = 32
 
 func _on_Door_body_entered(_body):
 	print("Level Complete!")
