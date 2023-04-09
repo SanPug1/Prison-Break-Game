@@ -38,13 +38,13 @@ gate_height = 4
 [node name="Moving Platforms" type="Node" parent="Lower Layer"]
 
 [node name="Platform1" parent="Lower Layer/Moving Platforms" instance=ExtResource( 7 )]
-position = Vector2( 192, 400 )
+position = Vector2( 224, 400 )
 platform_width = 2
 platform_height = 3
 track_end_node = NodePath("End")
 
 [node name="End" type="Node2D" parent="Lower Layer/Moving Platforms/Platform1"]
-position = Vector2( -192, 0 )
+position = Vector2( -128, 0 )
 
 [node name="Platform2" parent="Lower Layer/Moving Platforms" instance=ExtResource( 7 )]
 position = Vector2( 896, 464 )

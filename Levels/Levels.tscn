@@ -8,7 +8,7 @@
 [ext_resource path="res://Levels/Puzzle 5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level Manager/Old Level Scenes/Puzzle 4.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Puzzle 6.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/Puzzle 2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level Manager/Old Level Scenes/Puzzle 2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Level Manager/Old Level Scenes/Puzzle 7.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Levels.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Music/Melanies_Prison_Escape_Song.wav" type="AudioStream" id=12]

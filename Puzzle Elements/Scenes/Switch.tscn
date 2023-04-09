@@ -17,27 +17,31 @@ extents = Vector2( 40, 16 )
 [node name="Switch" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="SwitchSpr" type="Sprite" parent="."]
+[node name="Inner" type="Node2D" parent="."]
+
+[node name="SwitchSpr" type="Sprite" parent="Inner"]
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -32 )
 scale = Vector2( 2, 2 )
 z_index = -1
 texture = SubResource( 4 )
 
-[node name="FlipCollider" type="Area2D" parent="."]
+[node name="FlipCollider" type="Area2D" parent="Inner"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="Collide" type="CollisionShape2D" parent="FlipCollider"]
+[node name="Collide" type="CollisionShape2D" parent="Inner/FlipCollider"]
 position = Vector2( 0, -12 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
-[node name="FlippableCollider" type="Area2D" parent="."]
+[node name="FlippableCollider" type="Area2D" parent="Inner"]
+collision_layer = 4
+collision_mask = 4
 
-[node name="Collide" type="CollisionShape2D" parent="FlippableCollider"]
+[node name="Collide" type="CollisionShape2D" parent="Inner/FlippableCollider"]
 position = Vector2( 0, -16 )
 shape = SubResource( 3 )
 
-[connection signal="body_entered" from="FlipCollider" to="." method="_switch_toggled"]
-[connection signal="body_exited" from="FlippableCollider" to="." method="_switch_toggleable"]
+[connection signal="body_entered" from="Inner/FlipCollider" to="." method="_switch_toggled"]
+[connection signal="body_exited" from="Inner/FlippableCollider" to="." method="_switch_toggleable"]
