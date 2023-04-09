@@ -8,6 +8,11 @@
 
 [node name="Node" type="Node"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1050.0
+margin_bottom = 640.0
+color = Color( 0.482353, 0.470588, 0.517647, 1 )
+
 [node name="Lower Layer" type="CanvasLayer" parent="."]
 layer = 0
 
