@@ -64,6 +64,8 @@ invert_behaviour = true
 [node name="Darkness" parent="." instance=ExtResource( 11 )]
 listener_id = 1
 invert_behaviour = true
+delay_activate = 0.0
+delay_deactivate = 0.0
 darkness_level = 0.985
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

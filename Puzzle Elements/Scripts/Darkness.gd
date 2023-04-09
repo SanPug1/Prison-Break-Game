@@ -18,7 +18,7 @@ export(float, 0, 1) var darkness_level = 1.0 setget _set_darkness_level
 var queued_state = false
 
 func _ready():
-	pass
+	$CanvasModulate.visible = invert_behaviour
 
 func _on_set_activate_delay(new_delay):
 	delay_activate = max(0, new_delay)
