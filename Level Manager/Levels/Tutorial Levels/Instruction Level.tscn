@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Puzzle Elements/Scenes/Box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Puzzle Elements/Scenes/Ground.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Puzzle Elements/Scenes/Key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Fonts/joystix/joystix monospace.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Puzzle Elements/Scenes/Reset_Button.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -43,14 +44,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -314.0
-margin_top = -36.0
-margin_right = 315.0
-margin_bottom = 81.0
+margin_left = -463.0
+margin_top = -29.0
+margin_right = 466.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "Press a/d or left/right arrow keys to move
 press z or space bar to jump
-walk into objects to push or use them"
+walk into objects to push or use them
+Hit the Reset Puzzle Button at the top of your screen to reset"
 align = 1
 valign = 1
 
@@ -62,3 +64,9 @@ position = Vector2( 758, 200 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 779, 545 )
+
+[node name="Reset" parent="." instance=ExtResource( 9 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -84.0
+margin_right = 84.0

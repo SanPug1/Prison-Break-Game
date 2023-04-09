@@ -8,7 +8,6 @@ delay_activate = 0
 delay_deactivate = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="DelayTimer" type="Timer" parent="."]

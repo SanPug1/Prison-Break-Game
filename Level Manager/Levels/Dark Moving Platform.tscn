@@ -64,7 +64,7 @@ invert_behaviour = true
 [node name="Darkness" parent="." instance=ExtResource( 11 )]
 listener_id = 1
 invert_behaviour = true
-darkness_level = 0.975
+darkness_level = 0.985
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2

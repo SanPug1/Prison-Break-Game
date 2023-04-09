@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level Manager/Level Manager.gd" type="Script" id=1]
 [ext_resource path="res://Level Manager/Levels/Dark Moving Platform.tscn" type="PackedScene" id=2]
@@ -8,15 +8,17 @@
 [ext_resource path="res://Level Manager/Levels/Four Moving Platforms.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Level Manager/Levels/Tutorial Levels/Instruction Level.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level Manager/Levels/Tutorial Levels/Many Coloured Doors.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level Manager/Levels/Three box level.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Level Manager/Levels/Final countdown.tscn" type="PackedScene" id=10]
 
 [node name="Manager" type="Node" groups=["level_manager"]]
 script = ExtResource( 1 )
-levels_in_order = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ]
+levels_in_order = [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 10 ) ]
 
 [node name="Level" type="Node" parent="."]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -12.033
+volume_db = -13.818
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
