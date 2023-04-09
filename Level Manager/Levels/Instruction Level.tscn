@@ -23,13 +23,13 @@ margin_bottom = 640.0
 color = Color( 0.482353, 0.470588, 0.517647, 1 )
 
 [node name="Gate" parent="background" instance=ExtResource( 3 )]
-position = Vector2( 108, 0 )
+position = Vector2( 128, 32 )
 gate_width = 3
 gate_height = 3
 
 [node name="Key" parent="background" instance=ExtResource( 6 )]
-position = Vector2( 108, 96 )
-chain_length = 1.0
+position = Vector2( 128, 96 )
+chain_length = 1.2
 
 [node name="Button" parent="background" instance=ExtResource( 4 )]
 position = Vector2( 932, 447 )
