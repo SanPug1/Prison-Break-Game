@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Level Manager/Level Manager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main Menu/Title Screen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main Menu/Credits.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Main Menu/escape.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 4 )
+
+[node name="escape" parent="." instance=ExtResource( 5 )]
 
 [node name="Manager" parent="." instance=ExtResource( 1 )]
 
@@ -14,5 +17,6 @@ script = ExtResource( 4 )
 
 [node name="Title_Screen" parent="." instance=ExtResource( 2 )]
 
+[connection signal="credits" from="escape" to="." method="_on_escape_credits"]
 [connection signal="credits" from="Manager" to="." method="_on_Manager_credits"]
 [connection signal="game_start" from="Title_Screen" to="." method="_on_Title_Screen_game_start"]

@@ -12,7 +12,7 @@ position = Vector2( 80, 0 )
 script = ExtResource( 2 )
 
 [node name="Plate" type="KinematicBody2D" parent="."]
-position = Vector2( 381.635, 0 )
+position = Vector2( 64, 0 )
 
 [node name="Sprite" type="Sprite" parent="Plate"]
 position = Vector2( 41, 0 )
